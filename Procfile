@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -Dserver.port=$PORT -jar upc-app/target/*.jar
+web: java -jar upc-app/target/upc-app-0.0.1-SNAPSHOT.jar 
