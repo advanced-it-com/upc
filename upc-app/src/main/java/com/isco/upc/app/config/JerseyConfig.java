@@ -8,7 +8,7 @@ import org.glassfish.jersey.server.wadl.internal.WadlResource;
 import org.springframework.context.annotation.Configuration;
 
 import com.isco.upc.app.exceptionmapper.UPCExceptionMapper;
-//import com.isco.upc.app.filter.CROSFilter;
+import com.isco.upc.app.filter.CROSFilter;
 import com.isco.upc.app.filter.JWTRequestFilter;
 import com.isco.upc.app.resource.AuthenticationResource;
 import com.isco.upc.app.resource.CompanyResource;
@@ -53,7 +53,7 @@ public class JerseyConfig extends ResourceConfig {
 	//	register(MultipartResolver.class);
 		
 		
-		//register(CROSFilter.class);
+		register(CROSFilter.class);
 		register(JWTRequestFilter.class);
 		
 	//	register(ApiListingResource.class);
