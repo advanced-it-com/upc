@@ -31,12 +31,12 @@ public class PersonService {
     
 	public Page<Person> getPagedListPerson(int page, int size, PersonFunction function, String status, String name) {
 		Pageable pageableRequest = PageRequest.of(page, size, Sort.by(Sort.Direction.ASC, "name"));
-		Page<Person> persons = null;
-		if (StringUtils.isEmpty(name)){
+		Page<Person> persons = personRepository.findAll(pageableRequest);
+		/*if (StringUtils.isEmpty(name)){
 			persons = personRepository.findByPersonFunctionAndStatus(function, status, pageableRequest);
 		}else{
 		    persons = personRepository.findByAllCriteria(function, status, name, pageableRequest);
-		}
+		}*/
 	
 		
 		return persons;
